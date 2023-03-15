@@ -1,0 +1,53 @@
+.cover{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.form{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 10PX;
+}
+.form-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-control {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+
+}
+
+.form-control label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    
+    float: left;
+}
+
+.form-control input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 30rem;
+    max-width: 100%;
+  }
+  
+  .new-expense__actions {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 30rem;
+    height: 40px;  
+}

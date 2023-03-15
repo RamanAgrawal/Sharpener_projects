@@ -18,6 +18,7 @@ const CourseInput = props => {
      
     if(enteredValue.trim().length===0){
       setIsValid(false)
+      alert('kaun si gali du re')
       return
     }
     props.onAddGoal(enteredValue);

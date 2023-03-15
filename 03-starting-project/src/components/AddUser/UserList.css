@@ -1,0 +1,17 @@
+.users{
+    margin: 2rem auto;
+    width: 500px;
+    /* max-width: 30rem; */
+    
+}
+
+.users ul{
+    list-style: none;
+    padding: 1rem;
+}
+.users li{
+    border: 1px solid #af4a4a;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    color: blue;
+}
