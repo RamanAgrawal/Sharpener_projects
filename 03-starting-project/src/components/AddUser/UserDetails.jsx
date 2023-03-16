@@ -24,7 +24,7 @@ const UserDetails = (props) => {
         if (+enteredUserAge < 1) {
             setError({
                 title: "Invalid age",
-                message: "please enter age >1"
+                message: "please enter age > 1"
             })
             return
         }
