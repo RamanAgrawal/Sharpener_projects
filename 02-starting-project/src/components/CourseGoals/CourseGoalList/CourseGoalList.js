@@ -16,6 +16,7 @@ const CourseGoalList = props => {
         </CourseGoalItem>
       ))}
     </ul>
+    
   );
 };
 

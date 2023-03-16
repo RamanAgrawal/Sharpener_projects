@@ -1,23 +1,30 @@
-import './ErrorModel.css'
-import Card from './Card'
-import Button from './Button'
-const ErrorModel=props=>{
-return <div>
-<div className="backdrop" onClick={props.onConfirm}>
 
-<Card classes={'model'}>
-<header className='header'>
-    <h2>{props.title}</h2>
-</header>
-<div className='content'>
-    <p>{props.message}</p>
-</div>
-<footer className='actions'>
-    <Button onClick={props.onConfirm}>okey</Button>
-</footer>
-</Card>
-</div>
-</div>
+import ReactDOM from 'react-dom';
+
+import ModelOverlay from './ModelOverlay';
+import BackDrop from './BackDrop';
+const ErrorModel = props => {
+    return <div>
+
+        {
+            ReactDOM.createPortal(
+                <BackDrop
+                    onConfirm={props.onConfirm}
+                />, document.getElementById('backdrop-root'))
+        }
+
+        {
+            ReactDOM.createPortal(
+                <ModelOverlay
+                    title={props.title}
+                    message={props.message}
+                    onConfirm={props.onConfirm}
+                />, document.getElementById('overlay-root'))
+        }
+
+
+    </div>
+
 }
 
 export default ErrorModel
