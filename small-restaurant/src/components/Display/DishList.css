@@ -1,0 +1,23 @@
+.outer-div{
+    display: flex;
+  background-color: rgba(173, 169, 169,0.3);
+
+  padding: 5px;
+  border-radius: 10px;
+}
+.inner-div{
+    width: 33%;
+}
+.inner-div ul{
+    list-style: none;
+}
+.cen{
+    border-inline: 3px solid black;
+}
+.inner-div li{
+    height: 2rem;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px gray;
+}
