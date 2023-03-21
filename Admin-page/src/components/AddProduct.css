@@ -1,0 +1,25 @@
+.form-control{
+    /* width: 40%; */
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(151, 18, 142,0.1);
+    justify-content: center;
+    gap: 1rem;
+    text-align: left;
+}
+.form-control input,select{
+    width: 20rem;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+    height: 1.5rem;
+    
+}
+.form-control label,select {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+
+  }
+  .btn{
+    display: flex;
+    justify-content: center;
+  }

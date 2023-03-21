@@ -1,0 +1,11 @@
+.button {
+    border-radius: 5px;
+
+    padding: 0.5rem;
+
+    color: rgb(241, 241, 241);
+    background-color: rgb(84, 19, 214);
+    border: none;
+    height: inherit;
+    float: right;
+}
