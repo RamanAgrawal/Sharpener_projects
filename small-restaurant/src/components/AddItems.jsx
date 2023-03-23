@@ -1,7 +1,9 @@
-import { useRef } from "react"
+import { useRef, useContext } from "react"
 import Button from "../UI/Button"
 import './AddItems.css'
+import BillContext from "../store/Bill-context"
 const AddItems = props => {
+    const ctx = useContext(BillContext)
     const dishRef = useRef('')
     const priceRef = useRef('')
     const idRef = useRef('')
@@ -16,14 +18,14 @@ const AddItems = props => {
         const id = idRef.current.value;
         const TableNo = tableRef.current.value;
         const cart = {
-            
+
             id: id,
             dish: Dish,
             price: Price,
             table: TableNo
         }
         localStorage.setItem(cart.id, JSON.stringify(cart));
-        props.onAdditem(cart)
+        ctx.onAdditem(cart)
         dishRef.current.value = "";
         priceRef.current.value = "";
         idRef.current.value = "";
