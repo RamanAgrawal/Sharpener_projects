@@ -7,9 +7,9 @@ const MealsForm =()=>{
             id:'amount',
             type:'number',
             min:'1',
-            max:"6",
+            max:"5",
             step:'1',
-            DefaultValue:'1'
+            defaultValue:'1'
         }}/>
         <button >+ Add</button>
     </form>
