@@ -1,5 +1,5 @@
 import classes from './Model.module.css'
-// import { ReactDOM } from 'react-dom'
+import ReactDOM from 'react-dom'
 import { Fragment } from 'react'
 const Backdrop=props=>{
     return <div className={classes.backdrop}/>
@@ -14,9 +14,9 @@ const portalElement=document.getElementById('over-lay')
 const Model=props=>{
     return <Fragment>
          
-        {/* {ReactDOM.createPortal(<Backdrop/>,document.getElementById('root'))} */}
-          <Backdrop />
-         <ModelOverlay>{props.children}</ModelOverlay>
+        {ReactDOM.createPortal(<Backdrop/>,portalElement)}
+        {ReactDOM.createPortal(<ModelOverlay>{props.children}</ModelOverlay>,portalElement)}
+        
     </Fragment>
 }
 export default Model
