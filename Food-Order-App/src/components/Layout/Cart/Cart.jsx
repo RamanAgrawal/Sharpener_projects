@@ -15,7 +15,7 @@ const Cart = props => {
             <span>1000</span>
         </div>
         <div className={classes.actions}>
-            <button onClick={()=>{foodctx.HideCartHandler()}}>Close</button>
+            <button onClick={foodctx.HideCartHandler}>Close</button>
             <button >Order</button>
         </div>
     </div>

@@ -11,7 +11,7 @@ return (
 <React.Fragment>
 <header className={classes.header}>
     <h1>Meals</h1>
-    <HeaderCartButton onClick={()=>{ctx.ShowCartHandler()}}/>
+    <HeaderCartButton onClick={ctx.ShowCartHandler}/>
 </header>
 <div className={classes['main-image']}>
     <img src={meals} />

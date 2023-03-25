@@ -1,8 +1,11 @@
 import classes from './Model.module.css'
 import ReactDOM from 'react-dom'
+import { useContext } from 'react'
+import FoodContext from '../../FoodContext'
 import { Fragment } from 'react'
 const Backdrop=props=>{
-    return <div className={classes.backdrop}/>
+    const ctx=useContext(FoodContext)
+    return <div className={classes.backdrop} onClick={ctx.HideCartHandler}/>
 }
 const ModelOverlay=props=>{
     return <div className={classes.modal}>
