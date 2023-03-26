@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { FoodContextProvider } from './FoodContext';
+import { FoodContextProvider } from './store/FoodContext';
 import './index.css';
 import App from './App';
 

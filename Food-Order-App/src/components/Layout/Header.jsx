@@ -2,7 +2,7 @@ import React from "react";
 import classes from './Header.module.css'
 import meals from '../../assets/meals.jpg'
 import HeaderCartButton from "./Cart/HeaderCartButton";
-import FoodContext from "../../FoodContext";
+import FoodContext from "../../store/FoodContext";
 import { useContext } from "react";
 
 const Header=()=>{

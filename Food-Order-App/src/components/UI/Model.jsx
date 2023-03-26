@@ -1,7 +1,7 @@
 import classes from './Model.module.css'
 import ReactDOM from 'react-dom'
 import { useContext } from 'react'
-import FoodContext from '../../FoodContext'
+import FoodContext from '../../store/FoodContext'
 import { Fragment } from 'react'
 const Backdrop=props=>{
     const ctx=useContext(FoodContext)
