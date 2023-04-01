@@ -17,8 +17,8 @@ const AvailableMeals = () => {
     },
     {
       id: 'm3',
-      name: 'Barbecue Burger',
-      description: 'American, raw, meaty',
+      name: 'Paneer chilli',
+      description: 'spicy ,with onion and capcicam',
       price: 400,
     },
     {

@@ -31,7 +31,7 @@ const Cart = props => {
             {cartItems}
             <div className={classes.total}>
                 <span>Total Amount</span>
-                <span>{cartCtx.totalAmount}</span>
+                <span>{cartCtx.totalAmount}Rs</span>
             </div>
             <div className={classes.actions}>
                 <button onClick={foodctx.HideCartHandler}>Close</button>

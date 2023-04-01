@@ -1,8 +1,8 @@
-.home{
+.store{
     display: flex;
     max-width: 60vw;
     flex-wrap: wrap;
     margin-inline: auto;
-    justify-content: space-around;
+    justify-content: space-between;
     
 }

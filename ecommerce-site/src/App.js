@@ -1,13 +1,19 @@
 
 import './App.css';
 import Header from './components/Header';
-import Home from './components/Home';
+import Store from './components/Store';
+import Footer from './components/Footer';
+import { Button } from 'react-bootstrap';
+
 function App() {
   return (
-    <div className="App">
-     <Header/>
-     <Home/>
+    <div>
+      <Header />
+      <Store />
+      <div className='app'><Button variant='secondary'> See the Cart</Button></div>
+      <Footer />
     </div>
+
   );
 }
 

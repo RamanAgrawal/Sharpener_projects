@@ -1,6 +1,6 @@
 import React from "react";
 import classes from './Header.module.css'
-import meals from '../../assets/meals.jpg'
+import meals from '../../assets/food2.jpg'
 import HeaderCartButton from "./Cart/HeaderCartButton";
 import FoodContext from "../../store/FoodContext";
 import { useContext } from "react";

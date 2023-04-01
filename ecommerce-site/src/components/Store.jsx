@@ -1,7 +1,7 @@
 import React from 'react'
 import Product from './Product'
-import './Home.css'
-const Home = () => {
+import './Store.css'
+const store = () => {
   const productsArr = [
 
     {
@@ -46,10 +46,10 @@ const Home = () => {
     
     ]
   return (
-    <div className='home'>{productsArr.map(prod=>(
+    <div className='store'>{productsArr.map(prod=>(
       <Product prod={prod} />
     ))}</div>
   )
 }
 
-export default Home
+export default store
