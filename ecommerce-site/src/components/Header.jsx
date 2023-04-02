@@ -3,7 +3,7 @@ import { Container, Navbar, Dropdown, Badge } from 'react-bootstrap'
 import Nav from 'react-bootstrap/Nav'
 import { BsCartPlusFill } from 'react-icons/bs'
 import CartDropDown from './CartDropDown'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
 
 const Header = () => {
@@ -13,13 +13,13 @@ const Header = () => {
       <Container>
         <Navbar.Brand>
 
-          <a href="#">E-Commerce</a>
+        <NavLink  to='/'><h2 style={{color:'white'}}>The Generics</h2></NavLink>
         </Navbar.Brand>
         <Nav className="me-auto">
           
-          <Nav.Link><Link to='/'>Home</Link></Nav.Link>
-          <Nav.Link><Link to='/store'>Store</Link></Nav.Link>
-          <Nav.Link><Link to='/about'>About</Link></Nav.Link>
+          <Nav.Link><NavLink to='/'>Home</NavLink></Nav.Link>
+          <Nav.Link><NavLink to='/store'>Store</NavLink></Nav.Link>
+          <Nav.Link><NavLink to='/about'>About</NavLink></Nav.Link>
           
         </Nav>
         <Nav>
