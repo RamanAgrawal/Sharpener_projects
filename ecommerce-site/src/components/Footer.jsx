@@ -17,7 +17,7 @@ const Footer = () => {
 
         //   </Card.Body>
         // </Card>
-        <footer className="p-3 bg-dark text-white d-flex justify-content-around">
+        <footer className="p-3 bg-dark text-white d-flex justify-content-around footer-pin" >
             <span className="display-4 font-weight-bolder" style={{fontFamily:"serif"}}>My Generics</span>
                     
             <div className="d-flex">
