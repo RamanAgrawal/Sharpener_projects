@@ -1,47 +1,19 @@
 import React from 'react'
 import './style.css'
-import {MdDelete} from 'react-icons/md'
+import {AiOutlineMinusSquare} from 'react-icons/ai'
 import { Button } from 'react-bootstrap'
+import { CartContext } from '../context/CartContext'
 const CartDropDown = () => {
-    const item=[{
+  const {items,total,removeItemHandler}=CartContext()
+    
 
-        title: 'Colors',
-        
-        price: 100,
-        
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-        
-        quantity: 2,
-        
-        },
-        
-        {
-        
-        title: 'Black and white Colors',
-        
-        price: 50,
-        
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-        
-        quantity: 3,
-        
-        },
-        
-        {
-        
-        title: 'Yellow and Black Colors',
-        
-        price: 70,
-        
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-        
-        quantity: 1,
-        
-        }]
+    const removeItem=(item)=>{
+      removeItemHandler(item)
+    }
   return (<>
     <ul style={{paddingLeft:'1rem'}}>
-        {item.map(prod=>(
-            <li className='cart-item'>
+        {items.map(prod=>(
+            <li className='cart-item' key={prod.id}>
                 <img className='cart-img' src={prod.imageUrl} alt="" />
             <div>
               <h2>{prod.name}</h2>
@@ -51,15 +23,16 @@ const CartDropDown = () => {
               </div>
             </div>
            
-              <button className='actions' ><MdDelete/></button>
+              <button className='actions' onClick={()=>{removeItem(prod)}} ><AiOutlineMinusSquare/></button>
               
             
           </li>
         ))}
     </ul>
+    {items.length?<><h3 style={{textAlign:"end"}}>Total-{total}</h3>
     <div className='button'>
     <Button>Buy Now</Button>
-    </div>
+    </div></>:<h3 style={{textAlign:'center'}}>Cart Is Empty</h3>}
     </>
   )
 }

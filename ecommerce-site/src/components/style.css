@@ -3,6 +3,9 @@
     filter: brightness(130%);
     /* max-height: 250px; */
 }
+.prod-img{
+    transition: ease-in 0.5s;
+}
 .img{
 overflow: hidden;
 }
@@ -47,6 +50,7 @@ overflow: hidden;
   .actions {
    background-color: transparent;
    border: none;
+   font-size: 30px;
   }
   .button{
     display: flex;
