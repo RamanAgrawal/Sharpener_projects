@@ -5,7 +5,6 @@ import classes from './MoviesList.module.css';
 
 const MovieList = (props) => {
 
-  console.log("ha bhai//...");
   return (
     <ul className={classes['movies-list']}>
       {props.movies.map((movie) => (
@@ -20,4 +19,4 @@ const MovieList = (props) => {
   );
 };
 
-export default React.memo(MovieList)
+export default MovieList
