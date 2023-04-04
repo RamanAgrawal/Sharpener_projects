@@ -55,5 +55,9 @@ overflow: hidden;
   .button{
     display: flex;
     justify-content: center;
+    color: white;
    
+  }
+  .button>a{
+    color: antiquewhite;
   }

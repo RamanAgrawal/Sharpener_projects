@@ -1,23 +1,14 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
-import {IoLogoYoutube} from 'react-icons/io'
+
 
 const Footer = () => {
     return (
-        // <Card style={{backgroundColor:'GrayText',
-        //  marginTop:'5px',
-        //  position:"",
-        //  bottom:"100"}}>
-        //     <Card.Header bg="light-blue" variant='dark'>Featured</Card.Header>
-        //   <Card.Body>
-        //     <Card.Title>Special title treatment</Card.Title>
-        //     <Card.Text>
-        //       With supporting text below as a natural lead-in to additional content.
-        //     </Card.Text>
-
-        //   </Card.Body>
-        // </Card>
-        <footer className="p-3 bg-dark text-white d-flex justify-content-around footer-pin" >
+       
+        <footer style={{
+            bottom:'10',
+            color:'red',
+            border:'3px solid red'
+        }} className="p-3 bg-dark text-white d-flex justify-content-around" >
             <span className="display-4 font-weight-bolder" style={{fontFamily:"serif"}}>My Generics</span>
                     
             <div className="d-flex">

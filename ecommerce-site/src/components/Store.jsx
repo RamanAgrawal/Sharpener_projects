@@ -2,6 +2,7 @@ import React from 'react'
 import Product from './Product'
 import './Store.css'
 import { Button } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 const store = () => {
   const productsArr = [
 
@@ -58,7 +59,7 @@ const store = () => {
     <div className='store'>{productsArr.map(prod => (
       <Product prod={prod} key={prod.title} />
     ))}</div>
-    <div className='app'><Button variant='secondary'> See the Cart</Button></div>
+    <div className='app'><NavLink to='/cart'><Button variant='secondary'> See the Cart</Button></NavLink></div>
   </div>
   )
 }
