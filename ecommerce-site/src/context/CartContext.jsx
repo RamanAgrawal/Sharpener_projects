@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useReducer } from 'react';
 
 
@@ -47,12 +47,17 @@ const reducer = (state, action) => {
 }
 const CartContextProvider = ({ children }) => {
     const [cartState, dispatchCartAction] = useReducer(reducer, defaultState)
+    const [productitem,setproState]=useState({})
     const addItemHandler = item => {
         dispatchCartAction({ type: 'ADD', item:item })
         console.log(item);
     }
     const removeItemHandler = item => {
         dispatchCartAction({ type: 'REMOVE', item:item })
+    }
+    
+    const sendItem=item=>{
+        setproState(item)
     }
     return (
         <Cart.Provider value={{
@@ -61,6 +66,8 @@ const CartContextProvider = ({ children }) => {
             cartQuantity,
             addItemHandler,
             removeItemHandler,
+            sendItem,
+            productitem
         }
            
         }>{children}</Cart.Provider>
