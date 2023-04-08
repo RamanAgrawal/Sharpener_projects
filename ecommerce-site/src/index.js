@@ -6,15 +6,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import CartContextProvider from './context/CartContext';
+import AuthProvider from './context/AuthContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.Fragment>
-    <CartContextProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-</CartContextProvider>
-  </React.Fragment>
+  <BrowserRouter>
+    <AuthProvider>
+      <CartContextProvider>
+        <App />
+      </CartContextProvider>
+    </AuthProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

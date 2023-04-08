@@ -8,9 +8,13 @@ import Home from './components/Home';
 import Cart from './components/Cart';
 import Contect from './components/Contect';
 import ProductDetails from './components/ProductDetails';
-
+import { AuthContext } from './context/AuthContext';
+import Login from './components/Authentication/Login';
+import Signup from './components/Authentication/Sighup';
+import Profile from './components/Authentication/Profile';
 
 function App() {
+  const {isLoggedIn}=AuthContext()
   return (
     <div>
       <Header />
@@ -19,8 +23,13 @@ function App() {
         <Route path='/store/:productId' element={<ProductDetails/>}/>
         <Route path='/store' element={<Store/>}/>         
         <Route path='/about' element={<About/>}/>
-        <Route path='/cart' element={<Cart/>}/>
+        {isLoggedIn&&
+        <Route path='/cart' element={<Cart/>}/>}
         <Route path='/contect' element={<Contect/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+
       </Routes>
         <Footer />
     </div>

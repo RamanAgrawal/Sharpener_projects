@@ -18,7 +18,7 @@ export default function App() {
     <html lang="en">
       <head>
         <Meta />
-        <Links />g
+        <Links />
       </head>
       <body>
         <Outlet />

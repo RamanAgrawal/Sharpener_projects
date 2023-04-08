@@ -1,11 +1,13 @@
 import React from 'react'
-import { Container, Navbar, Dropdown, Badge,Nav } from 'react-bootstrap'
+import { Container, Navbar, Dropdown, Badge,Nav, Button } from 'react-bootstrap'
 import { FaCartPlus } from 'react-icons/fa'
 import CartDropDown from './CartDropDown'
 import {  NavLink } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
+import { AuthContext } from '../context/AuthContext'
 
 const Header = () => {
+  const {isLoggedIn,logout}=AuthContext()
   const {cartQuantity}=CartContext()
   return (
     <Navbar bg='dark' variant='dark' style={{ height: 80 }}>
@@ -19,8 +21,11 @@ const Header = () => {
           <Nav.Link><NavLink to='/about'>About</NavLink></Nav.Link>    
           <Nav.Link><NavLink to='/contect'>Contect Us</NavLink></Nav.Link>    
         </Nav>
-        <Nav>
-          <Dropdown >
+        <Nav >
+          {!isLoggedIn&&<NavLink to='/login'><Button variant='link' color={'white'}>Login</Button></NavLink>}
+          {isLoggedIn&&<NavLink to='/profile'><Button className='ml-10'>Change Password</Button></NavLink>}
+          {isLoggedIn&&<Button onClick={logout}>LogOut</Button>}
+          {isLoggedIn&&<Dropdown >
             <Dropdown.Toggle  variant="success" id="dropdown-basic">
               <FaCartPlus />
               <Badge>{cartQuantity}</Badge>
@@ -28,7 +33,7 @@ const Header = () => {
             <Dropdown.Menu  align="end" style={{width:300}}>
               <CartDropDown />
             </Dropdown.Menu>
-          </Dropdown>
+          </Dropdown>}
         </Nav>
       </Container>
 

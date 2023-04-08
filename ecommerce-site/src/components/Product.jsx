@@ -5,6 +5,7 @@ import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 
 const Product = ({ prod }) => {
+  
     const {addItemHandler,sendItem}=CartContext()
     // console.log(prod);
     const additem=()=>{
@@ -15,6 +16,7 @@ const Product = ({ prod }) => {
     }
     return (
         <div>
+           
             <Card  key={prod.id} className='prod-container m-3' >
                 <div className='img'><Link to={`/store/${prod.id}`}><Card.Img onClick={sendItemHandler} className='prod-img' variant='top' src={prod.imageUrl} alt={prod.title} /></Link></div>
                 <Card.Body>

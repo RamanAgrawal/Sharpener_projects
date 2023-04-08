@@ -3,7 +3,9 @@ import Product from './Product'
 import './Store.css'
 import { Button } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import { AuthContext } from '../context/AuthContext'
 const store = () => {
+  const {isLoggedIn}=AuthContext()
   const productsArr = [
 
     {
@@ -47,7 +49,7 @@ const store = () => {
     }
 
   ]
-  return (<div>
+  return (<div> {isLoggedIn?<div>
     <div style={{
       height: '150px',
       width: '100%',
@@ -59,8 +61,9 @@ const store = () => {
     <div className='store'>{productsArr.map(prod => (
       <Product prod={prod} key={prod.title} />
     ))}</div>
-    <div className='app'><NavLink to='/cart'><Button variant='secondary'> See the Cart</Button></NavLink></div>
-  </div>
+    <div className='app'><NavLink to='/cart'><Button variant='secondary'> See the Cart</Button></NavLink></div>)
+    </div> :<h1 style={{ fontSize: "70px" }}>Access Denied</h1>
+  } </div>
   )
 }
 

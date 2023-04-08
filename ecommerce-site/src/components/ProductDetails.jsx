@@ -1,9 +1,10 @@
 import React from 'react'
-import { Button, Card, Container } from 'react-bootstrap'
-import img from '../asset/about.jpg'
+import { Button,Container } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
+
 const ProductDetails = (prod) => {
+
     const {productitem,addItemHandler}=CartContext()
     const param=useParams()
     console.log(param.productId);
@@ -23,14 +24,13 @@ const ProductDetails = (prod) => {
                 </div>
 
                 <div className="detail border w-50">
-                    <span>name</span>
-                    <div>price</div>
-                    <div>rating</div>
+                    <span>{productitem.title}</span>
+                    <div>${productitem.price}</div>
+                    <div>5</div>
 
                 </div>
 
             </div>
-
         </Container>
     )
 }
