@@ -3,6 +3,7 @@ import Product from './Product'
 import './Store.css'
 import { Button } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
 const store = () => {
   const {isLoggedIn}=AuthContext()

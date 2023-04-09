@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { AuthContext } from "../../context/AuthContext"
-import { Link, useNavigate} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 // import { useHistory } from 'react-router-dom';
 
@@ -10,26 +10,30 @@ export default function Signup() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const { login } = AuthContext()
-    const [error, setError] = useState("")
+  const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useNavigate()
 
   async function handleSubmit(e) {
     e.preventDefault()
 
+    const email= emailRef.current.value
     try {
 
       setLoading(true)
       setError("")
-     const res= await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAyqFjwekzckK01VIQTo6f0bFFrPZrmDyI',{
-        email:emailRef.current.value,
-        password:passwordRef.current.value,
-        returnSecureToken:true
+      const res = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAyqFjwekzckK01VIQTo6f0bFFrPZrmDyI', {
+
+        email: email,
+        password: passwordRef.current.value,
+        returnSecureToken: true
       })
-      const token=(res.data.idToken);
+      console.log(res);
+      const token = (res.data.idToken);
+      localStorage.setItem('email',email)
       login(token)
       history("/store")
-      
+
     } catch {
       setError("Failed to sign in")
     }

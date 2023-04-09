@@ -12,26 +12,49 @@ import { AuthContext } from './context/AuthContext';
 import Login from './components/Authentication/Login';
 import Signup from './components/Authentication/Sighup';
 import Profile from './components/Authentication/Profile';
+import { useEffect } from 'react';
+import axios from 'axios';
+import { CartContext } from './context/CartContext';
 
 function App() {
-  const {isLoggedIn}=AuthContext()
+  const { replaceItem } = CartContext()
+  const { isLoggedIn } = AuthContext()
+  useEffect(() => {
+    const getItemsHandler = async () => {
+      const email = localStorage.getItem('email')
+      if (email) {
+        const username = email.replace('@', "").replace('.', "")
+        try {
+          const res = await axios(`https://my-first-project-c381c-default-rtdb.firebaseio.com/${username}.json`)
+          // console.log(res);
+          if(res.data){
+            replaceItem(res.data)
+          }
+        } catch (error) {
+
+        }
+      }
+    }
+    getItemsHandler()
+  }, [isLoggedIn])
+
   return (
     <div>
       <Header />
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/store/:productId' element={<ProductDetails/>}/>
-        <Route path='/store' element={<Store/>}/>         
-        <Route path='/about' element={<About/>}/>
-        {isLoggedIn&&
-        <Route path='/cart' element={<Cart/>}/>}
-        <Route path='/contect' element={<Contect/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/store/:productId' element={<ProductDetails />} />
+        <Route path='/store' element={<Store />} />
+        <Route path='/about' element={<About />} />
+        {isLoggedIn &&
+          <Route path='/cart' element={<Cart />} />}
+        <Route path='/contect' element={<Contect />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/profile' element={<Profile />} />
 
       </Routes>
-        <Footer />
+      <Footer />
     </div>
 
   );
