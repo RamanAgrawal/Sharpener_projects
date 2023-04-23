@@ -51,7 +51,7 @@ const store = () => {
 
   ]
   return (<div> {isLoggedIn?<div>
-    <div style={{
+    <div className='store-back' style={{
       height: '150px',
       width: '100%',
       textAlign: 'center',

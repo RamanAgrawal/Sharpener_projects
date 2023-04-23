@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Navbar, Dropdown, Badge,Nav, Button } from 'react-bootstrap'
-import { FaCartPlus } from 'react-icons/fa'
-import CartDropDown from './CartDropDown'
+import CartDropDown from './Cart/CartDropDown'
 import {  NavLink } from 'react-router-dom'
+import {FaCartPlus} from 'react-icons/fa'
 import { CartContext } from '../context/CartContext'
 import { AuthContext } from '../context/AuthContext'
 
@@ -22,9 +22,9 @@ const Header = () => {
           <Nav.Link><NavLink to='/contect'>Contect Us</NavLink></Nav.Link>    
         </Nav>
         <Nav >
-          {!isLoggedIn&&<NavLink to='/login'><Button variant='link' color={'white'}>Login</Button></NavLink>}
-          {isLoggedIn&&<NavLink to='/profile'><Button className='ml-10'>Change Password</Button></NavLink>}
-          {isLoggedIn&&<Button onClick={logout}>LogOut</Button>}
+          {!isLoggedIn&&<NavLink to='/login'><Button variant='link' style={{color:'white'}}>Login</Button></NavLink>}
+          {isLoggedIn&&<NavLink to='/profile' className='ml-10'><Button >Change Password</Button></NavLink>}
+          {isLoggedIn&&<NavLink to='/login' className='ml-10'><Button onClick={logout}>LogOut</Button></NavLink>}
           {isLoggedIn&&<Dropdown >
             <Dropdown.Toggle  variant="success" id="dropdown-basic">
               <FaCartPlus />

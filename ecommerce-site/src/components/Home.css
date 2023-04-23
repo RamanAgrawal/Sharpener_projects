@@ -1,0 +1,33 @@
+.home {
+    animation: color-change 8s infinite;
+  }
+  
+  @keyframes color-change {
+    0% { color: white; }
+    25% { color: rgb(33, 33, 33); }
+    50% { color: rgb(0, 0, 0); }
+    100% { color: white; }
+  }
+  .home-back{
+    background-image: url('../asset/home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .why{
+    width: 50vw;
+    height: 50vh;
+    box-shadow:00px 0px 9px 3px rgb(224 203 203 / 95%);
+    border-radius: 10px;
+    margin-inline: auto;
+    margin-top: -30px;
+    background-color: antiquewhite;
+    z-index: 10;
+  }
+  .why img{
+    float: right;
+  }
+  .why>h3{
+    margin: 10px;
+    /* margin-top: 20px; */
+    /* z-index: 1; */
+  }

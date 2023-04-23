@@ -24,6 +24,7 @@ export default function Login() {
       setError("")
       const res = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAyqFjwekzckK01VIQTo6f0bFFrPZrmDyI', {
         email: email,
+        
         password: passwordRef.current.value,
         returnSecureToken: true
       })
@@ -43,7 +44,7 @@ export default function Login() {
 
   return (
     <>
-      <Card className="w-25 m-auto">
+      <Card className="w-25 m-auto ">
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -56,7 +57,7 @@ export default function Login() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="w-100 mt-10" type="submit">
               Log In
             </Button>
           </Form>

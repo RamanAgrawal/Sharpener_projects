@@ -6,3 +6,18 @@
     justify-content: space-between;
     
 }
+h1 {
+    animation: color-change 8s infinite;
+  }
+  
+  @keyframes color-change {
+    0% { color: white; }
+    25% { color: rgb(33, 33, 33); }
+    50% { color: rgb(0, 0, 0); }
+    100% { color: white; }
+  }
+  .store-back{
+    background-image: url('../asset/home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

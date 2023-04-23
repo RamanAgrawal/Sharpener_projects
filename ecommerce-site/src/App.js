@@ -46,7 +46,7 @@ function App() {
       <Suspense fallback={
         <div style={{ height: '100vh', width: '100%' }} className='d-flex justify-content-center align-items-center'>
           <Loader />
-        </div>}>
+        </div>}>  
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />

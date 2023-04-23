@@ -1,10 +1,17 @@
-import React from 'react'
-import { CartContext } from '../context/CartContext'
+
+import { CartContext } from '../../context/CartContext'
 import './Cart.css'
-import { Button } from 'react-bootstrap'
+import {  Button } from 'react-bootstrap'
 import CartItem from './CartItem'
 const Cart = () => {
-    const { items, removeItemHandler, cartQuantity, total } = CartContext()
+
+    const { items, removeItemHandler, cartQuantity, total,clearContext } = CartContext()
+    const purchaseHandler=()=>{
+        clearContext();
+        
+        if(cartQuantity){alert("thanks for buying")}else{alert("please add somthing")}
+
+    }
     return (
         <div className='cart-container'>
             <div className='cart-outer'>
@@ -21,8 +28,9 @@ const Cart = () => {
             <div className='cart-price'>
                 <h3>Subtotal ({cartQuantity} item): ${total} </h3>
                 <div className="d-grid gap-2">
-                    <Button variant='warning'> Proceed to Buy</Button>
+                    <Button onClick={purchaseHandler} variant='warning'> Proceed to Buy</Button>
                 </div>
+                
             </div>
         </div>
     )

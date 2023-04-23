@@ -1,9 +1,11 @@
 import React from 'react'
-import './style.css'
+import '../style.css'
 import { AiOutlineMinusSquare } from 'react-icons/ai'
 import { Button } from 'react-bootstrap'
-import { CartContext } from '../context/CartContext'
+// import { CartContext } from '../context/CartContext'
+
 import { NavLink } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 const CartDropDown = () => {
   const { items, total, removeItemHandler } = CartContext()
 
@@ -30,7 +32,7 @@ const CartDropDown = () => {
         </li>
       ))}
     </ul>
-    {items.length ? <h3 style={{ textAlign: "end" }}>Total-{total}</h3>: <h3 style={{ textAlign: 'center' }}>Cart Is Empty</h3>}
+    {items.length ? <h3 style={{ textAlign: "end" }}>Total-${total}</h3>: <h3 style={{ textAlign: 'center' }}>Cart Is Empty</h3>}
     <div className='button'>
       <Button variant='success'>
         <NavLink to='/cart' style={

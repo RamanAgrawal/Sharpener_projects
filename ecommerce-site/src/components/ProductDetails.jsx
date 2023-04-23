@@ -2,6 +2,7 @@ import React from 'react'
 import { Button,Container } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
+import rate from '../asset/rating.png'
 
 const ProductDetails = (prod) => {
 
@@ -24,9 +25,10 @@ const ProductDetails = (prod) => {
                 </div>
 
                 <div className="detail border w-50">
-                    <span>{productitem.title}</span>
+                    <h2>{productitem.title}</h2>
                     <div>${productitem.price}</div>
-                    <div>5</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, sit! Velit a commodi quis, dicta deleniti voluptatum quibusdam? Repellendus ducimus ea laudantium ex, esse quisquam ipsa fugnsequatur, nisi quam similique numquam maxime a delectus saepe ratione sit. Excepturi iste repellat doloribus eligendi aperiam natus?</p>
+                    <img src={rate} alt="" style={{width:'100px'}} />
 
                 </div>
 
