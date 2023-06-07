@@ -1,16 +1,17 @@
 
 import { configureStore } from "@reduxjs/toolkit"
 import AuthSlice from "./AuthSlice"
-import ExpenseSlice from "./ExpenseSlice"
-import FormSlice from "./FormSlice"
+
+import CounterSlice from "./CounterSlice"
+
 
 
 
 const store=configureStore({
     reducer:{
         auth:AuthSlice.reducer,
-        expense:ExpenseSlice.reducer,
-        expenseForm:FormSlice.reducer
+        counter:CounterSlice.reducer,
+     
     }
 })
 
